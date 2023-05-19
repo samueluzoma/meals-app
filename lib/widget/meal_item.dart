@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:meals_app/widget/meal_item_trait.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem({
@@ -31,8 +32,8 @@ class MealItem extends StatelessWidget {
             ),
             Positioned(
               child: Container(
-                margin: const EdgeInsets.fromLTRB(0, 200, 0, 0),
-                padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
+                margin: const EdgeInsets.fromLTRB(0, 130, 0, 0),
+                padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
                 color: Colors.black54,
                 child: Column(
                   children: [
@@ -53,7 +54,12 @@ class MealItem extends StatelessWidget {
                       height: 12,
                     ),
                     Row(
-                      children: [],
+                      children: [
+                        //calling the mealitemtrait widget here
+                        MealItemTrait(
+                            icon: Icons.schedule,
+                            label: '${meal.duration} mins'),
+                      ],
                     )
                   ],
                 ),
